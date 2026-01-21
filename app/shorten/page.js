@@ -29,7 +29,6 @@ const Shorten = () => {
       .then((response) => response.json())
       .then((result) => {
         setgenerated(`${process.env.NEXT_PUBLIC_BASE_URL}/${result.shortCode}`);
-        
       })
       .finally(()=> {seturl(""); setshorturl("");})
       .catch((error) => console.error(error));
