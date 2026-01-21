@@ -29,9 +29,9 @@ const Shorten = () => {
       .then((response) => response.json())
       .then((result) => {
         setgenerated(`${process.env.NEXT_PUBLIC_BASE_URL}/${result.shortCode}`);
-        seturl("");
-        setshorturl("");
+        
       })
+      .finally(()=> {seturl(""); setshorturl("");})
       .catch((error) => console.error(error));
   };
 
@@ -66,7 +66,7 @@ const Shorten = () => {
           onClick={generate}
           className="w-full px-4 py-2 bg-sky-500 text-white rounded-lg font-semibold hover:bg-sky-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {disabled ? "Generating..." : "Shorten"}
+          Shorten
         </button>
         {generated && (
           <div className="bg-green-50 p-4 rounded-lg border border-green-200">
