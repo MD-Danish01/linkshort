@@ -6,7 +6,7 @@ export default async function Page({ params }) {
   console.log(url);
   // // Fetch the long URL from the database based on the short URL
   const client = await clientPromise;
-  const db = client.db("bitlinkproject");
+  const db = client.db("LinkShortenerDB");
   const collection = db.collection("urls");
   //check if shortCode already exists then redirect
   const doc = await collection.findOne({ shortCode: url });
