@@ -10,6 +10,9 @@ const Shorten = () => {
   const [copied, setCopied] = useState(false);
 
   const generate = () => {
+    setgenerated(""); // Clear previous generated URL
+    setCopied(false); // Reset copied state
+
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -28,10 +31,13 @@ const Shorten = () => {
     fetch("api/generate", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        setgenerated(`${process.env.NEXT_PUBLIC_BASE_URL}/${result.shortCode}`);
+        if (result.shortCode) {
+          setgenerated(`${process.env.NEXT_PUBLIC_BASE_URL}/${result.shortCode}`);
+          seturl("");
+          setshorturl("");
+        }
       })
-      .catch((error) => console.error(error))
-      .finally(() => { seturl(""); setshorturl(""); });
+      .catch((error) => console.error(error));
   };
 
   const copyToClipboard = () => {
