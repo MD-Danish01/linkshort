@@ -38,12 +38,16 @@ const Navbar = () => {
           </Link>
         </ul>
         <div className="flex gap-4">
-          <button className="rounded-2xl px-4 py-1 bg-sky-500 hover:bg-sky-600">
-            <Link href={"/shorten"}>Try now</Link>
-          </button>
-          <button className="rounded-2xl px-4 py-1 bg-sky-500 hover:bg-sky-600">
-            <Link href={"/github"}>Github</Link>
-          </button>
+          <Link href={"/shorten"}>
+            <button className="rounded-2xl px-4 py-1 bg-sky-500 hover:bg-sky-600">
+              Try now
+            </button>
+          </Link>
+          <Link href={"/https://github.com/MD-Danish01/linkshort"}>
+            <button className="rounded-2xl px-4 py-1 bg-sky-500 hover:bg-sky-600">
+              Github
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -81,16 +85,16 @@ const Navbar = () => {
             </Link>
           </ul>
           <div className="flex flex-col gap-3 px-4 pb-4">
-            <button className="rounded-2xl px-4 py-2 bg-sky-500 hover:bg-sky-600">
-              <Link href={"/shorten"} onClick={() => setIsMenuOpen(false)}>
+            <Link href={"/shorten"} onClick={() => setIsMenuOpen(false)}>
+              <button className="rounded-2xl px-4 py-2 bg-sky-500 hover:bg-sky-600">
                 Try now
-              </Link>
-            </button>
-            <button className="rounded-2xl px-4 py-2 bg-sky-500 hover:bg-sky-600">
-              <Link href={"/github"} onClick={() => setIsMenuOpen(false)}>
+              </button>
+            </Link>
+            <Link href={"/https://github.com/MD-Danish01/linkshort"} onClick={() => setIsMenuOpen(false)}>
+              <button className="rounded-2xl px-4 py-2 bg-sky-500 hover:bg-sky-600">
                 Github
-              </Link>
-            </button>
+              </button>
+            </Link>
           </div>
         </div>
       )}

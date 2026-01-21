@@ -28,9 +28,9 @@ const Shorten = () => {
     fetch("api/generate", requestOptions)
       .then((response) => response.json())
       .then((result) => {
+        setgenerated(`${process.env.NEXT_PUBLIC_BASE_URL}/${result.shortCode}`);
         seturl("");
         setshorturl("");
-        setgenerated(`${process.env.NEXT_PUBLIC_BASE_URL}/${result.shortCode}`);
       })
       .catch((error) => console.error(error));
   };
@@ -64,15 +64,19 @@ const Shorten = () => {
         <button
           disabled={!url || !shorturl}
           onClick={generate}
-          className="w-full px-4 py-2 bg-sky-500 text-white rounded-lg font-semibold hover:bg-sky-600 transition"
+          className="w-full px-4 py-2 bg-sky-500 text-white rounded-lg font-semibold hover:bg-sky-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Shorten
+          {disabled ? "Generating..." : "Shorten"}
         </button>
         {generated && (
           <div className="bg-green-50 p-4 rounded-lg border border-green-200">
             <code className="block break-all text-green-600 mb-2">
               Your shortened URL: <br />
-              <Link target="_blank" href={generated} className="hover:underline">
+              <Link
+                target="_blank"
+                href={generated}
+                className="hover:underline"
+              >
                 {generated}
               </Link>
             </code>
