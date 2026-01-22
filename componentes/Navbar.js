@@ -43,7 +43,7 @@ const Navbar = () => {
               Try now
             </button>
           </Link>
-          <Link href={"/https://github.com/MD-Danish01/linkshort"}>
+          <Link href={"https://github.com/MD-Danish01/linkshort"}>
             <button className="rounded-2xl px-4 py-1 bg-sky-500 hover:bg-sky-600">
               Github
             </button>
@@ -90,7 +90,7 @@ const Navbar = () => {
                 Try now
               </button>
             </Link>
-            <Link href={"/https://github.com/MD-Danish01/linkshort"} onClick={() => setIsMenuOpen(false)}>
+            <Link href={"https://github.com/MD-Danish01/linkshort"} onClick={() => setIsMenuOpen(false)}>
               <button className="rounded-2xl px-4 py-2 bg-sky-500 hover:bg-sky-600">
                 Github
               </button>
