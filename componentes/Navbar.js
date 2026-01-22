@@ -85,13 +85,13 @@ const Navbar = () => {
             </Link>
           </ul>
           <div className="flex flex-col gap-3 px-4 pb-4">
-            <Link href={"/shorten"} onClick={() => setIsMenuOpen(false)}>
-              <button className="rounded-2xl px-4 py-2 bg-sky-500 hover:bg-sky-600">
+            <Link href={"/shorten"} className="text-center rounded-2xl px-4 py-2 bg-sky-500 hover:bg-sky-600" onClick={() => setIsMenuOpen(false)}>
+              <button>
                 Try now
               </button>
             </Link>
-            <Link target="_blank" href={"https://github.com/MD-Danish01/linkshort"} onClick={() => setIsMenuOpen(false)}>
-              <button className="rounded-2xl px-4 py-2 bg-sky-500 hover:bg-sky-600">
+            <Link target="_blank" href={"https://github.com/MD-Danish01/linkshort"} className="text-center rounded-2xl px-4 py-2 bg-sky-500 hover:bg-sky-600" onClick={() => setIsMenuOpen(false)}>
+              <button>
                 Github
               </button>
             </Link>
